@@ -253,3 +253,55 @@ summary {
   }
 
 }
+
+/* Contact icons */
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 41px;
+  height: 41px;
+
+  color: #2c5d8a;
+  border: 1px solid #d4d4d4;
+  border-radius: 50%;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-icon:hover {
+  color: #fff;
+  background-color: #2c5d8a;
+  border-color: #2c5d8a;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.contact-icon:focus-visible {
+  outline: 3px solid rgba(44, 93, 138, 0.3);
+  outline-offset: 3px;
+}
