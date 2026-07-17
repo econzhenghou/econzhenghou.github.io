@@ -283,39 +283,64 @@ a:focus-visible {
 }
 
 
-/* Abstract and project-description dropdown */
+/* Abstract, project description, and feedback dropdowns */
 
 details {
   margin-top: 13px;
 }
 
-summary {
-  display: inline-block;
+details > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 2px 0;
 
   color: #2c5d8a;
   font-weight: 500;
 
   cursor: pointer;
+  user-select: none;
+  list-style: none;
 }
 
-summary:hover {
-  text-decoration: underline;
+/* Hide the browser's default arrow */
+
+details > summary::-webkit-details-marker {
+  display: none;
 }
 
-details[open] summary {
+/* Custom right-pointing arrow */
+
+details > summary::before {
+  content: "▸";
+  display: inline-block;
+
+  font-size: 0.95rem;
+  line-height: 1;
+
+  transition: transform 0.18s ease;
+}
+
+/* Rotate downward when expanded */
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details[open] > summary {
   margin-bottom: 4px;
 }
 
-.abstract {
-  max-width: 760px;
-  margin-top: 13px;
-  padding-left: 17px;
-
-  border-left: 3px solid #ddd;
-
-  line-height: 1.7;
+details > summary:hover {
+  text-decoration: underline;
 }
 
+details > summary:focus-visible {
+  outline: 2px solid #2c5d8a;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 
 /* -----------------------------
    Research experience
@@ -589,22 +614,6 @@ details[open] summary {
 .student-feedback {
   margin-top: 14px;
 }
-
-.student-feedback summary {
-  display: inline-block;
-  color: #2c5d8a;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.student-feedback summary:hover {
-  text-decoration: underline;
-}
-
-.student-feedback[open] summary {
-  margin-bottom: 4px;
-}
-
 
 /* Note above selected comments */
 
