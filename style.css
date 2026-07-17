@@ -26,7 +26,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #222;
-  background: #fff;
+  background-color: #fff;
 }
 
 a {
@@ -36,6 +36,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid #2c5d8a;
+  outline-offset: 3px;
 }
 
 
@@ -64,10 +69,12 @@ a:hover {
 
 .site-nav {
   display: flex;
+  align-items: center;
   gap: 28px;
 }
 
 .site-nav a {
+  padding: 4px 0;
   color: #444;
 }
 
@@ -95,10 +102,13 @@ a:hover {
 
 .profile-photo {
   display: block;
+
   width: 210px;
   height: 250px;
-  object-position: center top;
+
   object-fit: cover;
+  object-position: center top;
+
   border-radius: 3px;
 }
 
@@ -114,15 +124,6 @@ a:hover {
 
 .position {
   font-weight: 500;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-
-  margin-top: 20px;
 }
 
 .main-content {
@@ -147,7 +148,60 @@ a:hover {
 
 
 /* -----------------------------
-   Research and teaching pages
+   Contact icons
+------------------------------ */
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 22px;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  text-decoration: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-icon img {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+
+  object-fit: contain;
+}
+
+.contact-icon:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.contact-icon:focus-visible {
+  outline: 2px solid #2c5d8a;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+
+/* -----------------------------
+   Common interior-page layout
 ------------------------------ */
 
 .page-content {
@@ -159,28 +213,65 @@ a:hover {
 .page-content > h1 {
   margin-top: 0;
   margin-bottom: 36px;
+
   font-size: 2rem;
 }
 
-.section-heading {
-  margin-top: 45px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #ddd;
+.page-intro {
+  max-width: 760px;
+  margin: -12px 0 38px;
+
+  color: #444;
+  font-size: 1.03rem;
+  line-height: 1.75;
 }
 
+.section-heading {
+  margin-top: 48px;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #ddd;
+
+  font-size: 1.45rem;
+}
+
+
+/* -----------------------------
+   Research page: papers
+------------------------------ */
+
 .paper {
-  margin: 28px 0 38px;
+  margin: 0 0 42px;
 }
 
 .paper-title {
-  margin-bottom: 6px;
+  margin: 0 0 7px;
+
   font-size: 1.15rem;
   font-weight: 650;
+  line-height: 1.45;
 }
 
 .coauthors {
   margin: 4px 0;
   color: #555;
+}
+
+.paper-status {
+  margin: 5px 0;
+
+  color: #666;
+  font-style: italic;
+}
+
+.paper-presentation {
+  max-width: 760px;
+  margin: 8px 0 12px;
+
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .paper-links {
@@ -191,19 +282,218 @@ a:hover {
   margin-right: 13px;
 }
 
+
+/* Abstract and project-description dropdown */
+
 details {
-  margin-top: 12px;
+  margin-top: 13px;
 }
 
 summary {
+  display: inline-block;
+
   color: #2c5d8a;
+  font-weight: 500;
+
   cursor: pointer;
 }
 
+summary:hover {
+  text-decoration: underline;
+}
+
+details[open] summary {
+  margin-bottom: 4px;
+}
+
 .abstract {
-  margin-top: 12px;
-  padding-left: 16px;
+  max-width: 760px;
+  margin-top: 13px;
+  padding-left: 17px;
+
   border-left: 3px solid #ddd;
+
+  line-height: 1.7;
+}
+
+
+/* -----------------------------
+   Research experience
+------------------------------ */
+
+.experience-item {
+  margin: 0 0 31px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.experience-header h3 {
+  margin: 0;
+
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.experience-date {
+  flex-shrink: 0;
+
+  color: #666;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.experience-institution {
+  margin: 5px 0 9px;
+
+  color: #666;
+  font-style: italic;
+}
+
+
+/* -----------------------------
+   Professional service
+------------------------------ */
+
+.service-list {
+  margin: 0 0 42px;
+  padding-left: 22px;
+}
+
+.service-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+
+/* -----------------------------
+   Teaching page
+------------------------------ */
+
+.teaching-role {
+  margin-bottom: 44px;
+}
+
+.teaching-role > h3 {
+  margin: 0 0 22px;
+
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+
+/* Individual highlighted courses */
+
+.course {
+  margin: 0 0 34px;
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.course-header h4 {
+  margin: 0;
+
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.course-term {
+  flex-shrink: 0;
+
+  color: #666;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.course-level {
+  margin: 5px 0 9px;
+
+  color: #666;
+  font-style: italic;
+}
+
+.teaching-evaluation {
+  margin-top: 9px;
+}
+
+.response-count {
+  color: #666;
+  font-size: 0.94rem;
+}
+
+
+/* Teaching Associate course list */
+
+.course-list {
+  margin: 0;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.course-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 25px;
+
+  padding: 11px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.course-list li:first-child {
+  border-top: 1px solid #eee;
+}
+
+.course-name {
+  line-height: 1.5;
+}
+
+
+/* -----------------------------
+   Teaching development
+------------------------------ */
+
+.credential {
+  margin: 0 0 34px;
+}
+
+.credential-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.credential-header h3 {
+  margin: 0;
+
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.credential-year {
+  flex-shrink: 0;
+
+  color: #666;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.credential-provider {
+  margin: 5px 0 9px;
+
+  color: #666;
+  font-style: italic;
 }
 
 
@@ -215,8 +505,8 @@ summary {
   padding: 28px 0 35px;
   border-top: 1px solid #ddd;
 
-  font-size: 0.9rem;
   color: #666;
+  font-size: 0.9rem;
 }
 
 
@@ -238,12 +528,14 @@ summary {
   .site-nav {
     flex-wrap: wrap;
     gap: 8px 20px;
+
     margin-top: 14px;
   }
 
   .profile-layout {
     grid-template-columns: 1fr;
     gap: 38px;
+
     padding-top: 38px;
   }
 
@@ -252,53 +544,40 @@ summary {
     height: 215px;
   }
 
-}
+  .page-content {
+    padding-top: 40px;
+  }
 
-/* Contact icons */
+  .page-content > h1 {
+    margin-bottom: 28px;
+  }
 
-.contact-icons {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 13px;
-  margin-top: 22px;
-}
+  .page-intro {
+    margin-top: -6px;
+  }
 
-.contact-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  .section-heading {
+    margin-top: 40px;
+  }
 
-  width: 28px;
-  height: 28px;
-  padding: 0;
+  .experience-header,
+  .course-header,
+  .credential-header,
+  .course-list li {
+    display: block;
+  }
 
-  text-decoration: none;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
+  .experience-date,
+  .course-term,
+  .credential-year {
+    display: block;
+    margin-top: 4px;
 
-.contact-icon img {
-  display: block;
+    white-space: normal;
+  }
 
-  width: 24px;
-  height: 24px;
+  .course-list li {
+    padding: 13px 0;
+  }
 
-  max-width: 24px;
-  max-height: 24px;
-
-  object-fit: contain;
-}
-
-.contact-icon:hover {
-  opacity: 0.7;
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-.contact-icon:focus-visible {
-  outline: 2px solid #2c5d8a;
-  outline-offset: 4px;
-  border-radius: 3px;
 }
