@@ -2,55 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Personal academic website"
-  >
-
-  <title>Zheng Hou</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal academic website">
+  <title>CV | Zheng Hou</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  
   <!-- Top navigation -->
   <header class="site-header">
-
     <a class="site-title" href="index.html">
       Zheng Hou
     </a>
 
-    <!-- Navigation bar -->
     <nav class="site-nav">
       <a href="index.html">About</a>
       <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
-      <a class="active" href="cv.html">CV</a>
+      <!-- The 'active' class is now moved to CV -->
+      <a class="active" href="cv.html">CV</a> 
     </nav>
-    </header>
+  </header>
 
-      <!-- Main content -->
-  <main class="page-content">
-    <!-- Main Content -->
-          <h2>Curriculum Vitae</h2>
-        <p>My full CV is available upon request.</p>
-        <p>Please feel free to contact me at: <br>
-           <!-- Replace the email below with your actual email address -->
-           <a href="mailto:hou.582@osu.edu">hou.582@osu.edu</a>
-        </p>
-    </main>
-    
-<!-- Footer -->
+  <!-- Main layout container (Do not delete) -->
+  <main class="profile-layout">
+
+    <!-- Left column: Kept identical to the homepage (Do not delete) -->
+    <aside class="profile-sidebar">
+      <img class="profile-photo" src="other/headshots_copy.png" alt="Zheng Hou">
+      <h1>Zheng Hou</h1>
+      <p class="position">
+         Ph.D. Candidate in Agricultural, Environmental, and Development Economics
+      </p>
+      <p>The Ohio State University</p>
+
+      <div class="contact-icons" aria-label="Contact and academic profiles">
+        <a class="contact-icon" href="mailto:hou.582@osu.edu" aria-label="Email" title="Email">
+          <img src="icons/email.svg" alt="">
+        </a>
+        <a class="contact-icon" href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+          <img src="icons/google-scholar.svg" alt="">
+        </a>
+        <a class="contact-icon" href="https://www.linkedin.com/in/zheng-hou-45429832b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <img src="icons/in_copy.png" alt="">
+        </a>
+        <a class="contact-icon" href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="X" title="X / Twitter">
+          <img src="icons/x.png" alt="">
+        </a>
+        <a class="contact-icon" href="https://orcid.org/0009-0001-2980-5414" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID">
+          <img src="icons/orcid.svg" alt="">
+        </a>
+      </div>
+    </aside>
+
+    <!-- Right column: Replaced with the CV request text -->
+    <section class="main-content">
+      
+      <h2>Curriculum Vitae</h2>
+      
+      <p>
+        My full CV is available upon request.
+      </p>
+      
+      <p>
+        Please feel free to contact me at:<br>
+        <a href="mailto:hou.582@osu.edu">hou.582@osu.edu</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <footer class="site-footer">
     © 2026 Zheng Hou
   </footer>
+
 </body>
 </html>
